@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshul Vairagade | Cyber Security Engineer</title>
+  <meta name="description" content="Portfolio of Anshul Vairagade — Cyber Security Engineer specializing in penetration testing, digital forensics, and adversarial security research. Based in Nagpur, India.">
+
+  <!-- OG Meta Tags for LinkedIn / Social Sharing -->
+  <meta property="og:title" content="Anshul Vairagade | Cyber Security Engineer">
+  <meta property="og:description" content="Cybersecurity engineer with hands-on experience in penetration testing, digital forensics, and adversarial security research. CTF champion & security tool builder.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anshulvairagade.github.io">
+  <meta property="og:image" content="https://anshulvairagade.github.io/og-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: Terminal ">" -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300FF41'>></text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================== LOADING SCREEN ======================== -->
+  <div id="loader" aria-label="Loading">
+    <canvas id="loader-matrix-canvas"></canvas>
+    <div id="loader-content">
+      <div id="loader-text">
+        <span class="loader-bracket">[</span>
+        <span id="loader-progress">INITIALIZING</span>
+        <span class="loader-bracket">]</span>
+      </div>
+      <div id="loader-bar">
+        <div id="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== MATRIX RAIN BACKGROUND CANVAS ======================== -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- ======================== CURSOR TRAIL (JS-generated dots) ======================== -->
+  <!-- [AGENT 3: 6-dot green cursor trail elements generated via JS] -->
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav id="main-nav" aria-label="Primary navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="nav-logo-bracket">&gt;</span> anshul<span class="nav-logo-cursor">_</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#skills" data-nav="skills">Skills</a></li>
+        <li><a href="#experience" data-nav="experience">Experience</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#ctf" data-nav="ctf">CTF</a></li>
+        <li><a href="#certifications" data-nav="certifications">Certs</a></li>
+        <li><a href="#gallery" data-nav="gallery">Gallery</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+      </ul>
+      <!-- Sound Toggle -->
+      <button id="sound-toggle" class="sound-toggle" aria-label="Toggle sound effects" title="Sound effects (off)">
+        <svg class="sound-icon-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <svg class="sound-icon-on" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================== SECTION: HERO ======================== -->
+  <section id="hero" data-section="hero" class="section hero-section">
+    <div class="hero-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">root@anshul:~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="terminal-prompt">root@anshul:~$</span>
+          <span id="hero-typer" class="terminal-command"></span>
+          <span class="terminal-cursor">▮</span>
+        </div>
+        <div class="terminal-output" id="hero-output">
+          <!-- [AGENT 3: Typing animation fills this] -->
+        </div>
+      </div>
+    </div>
+    <div class="hero-info">
+      <h1 class="hero-name glitch-target" data-text="ANSHUL VAIRAGADE">ANSHUL VAIRAGADE</h1>
+      <p class="hero-title">Cyber Security Engineer</p>
+      <p class="hero-tagline">Penetration Testing · Digital Forensics · Adversarial Research</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <a href="https://medium.com/@anshulvairagade13" target="_blank" rel="noopener noreferrer" class="hero-blog-link">
+        <span class="hero-blog-slash">//</span> Read my Blogs <span class="hero-blog-arrow">→</span>
+      </a>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-arrow">&#x25BE;</span>
+      <span class="scroll-text">scroll down</span>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: ABOUT ======================== -->
+  <section id="about" data-section="about" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// ABOUT ME">// ABOUT ME</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Cybersecurity engineer in training with strong hands-on experience in penetration testing, digital forensics, and adversarial security research. Proven background working with Cyber Police investigations, offensive security internships, and organizing national-level Capture The Flag (CTF) competitions.</p>
+          <p>Experienced in building security tools, conducting workshops, and simulating real-world attack scenarios. Focused on developing practical red-team and incident response skills beyond theoretical security.</p>
+          <p class="about-education"><span class="highlight">B.Tech CSE (Cyber Security)</span> — St. Vincent Pallotti College of Engineering & Technology, Nagpur</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card" data-section="about">
+            <span class="stat-number" data-target="250" data-suffix="+">0</span>
+            <span class="stat-label">Students Trained</span>
+          </div>
+          <div class="stat-card" data-section="about">
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">CTF Wins (1st Place)</span>
+          </div>
+          <div class="stat-card" data-section="about">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Security Internships</span>
+          </div>
+          <div class="stat-card" data-section="about">
+            <span class="stat-number" data-target="6">0</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: SKILLS ======================== -->
+  <section id="skills" data-section="skills" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// SKILL SET">// SKILL SET</h2>
+      <p class="section-subtitle">Offensive & defensive security arsenal</p>
+      <div class="skills-categories">
+
+        <div class="skill-category reveal-up">
+          <div class="skill-cat-header">
+            <span class="skill-cat-label">Security</span>
+            <div class="skill-cat-line"></div>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">Penetration Testing</span>
+            <span class="skill-pill">Digital Forensics</span>
+            <span class="skill-pill">Incident Response</span>
+            <span class="skill-pill">Web Security</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up">
+          <div class="skill-cat-header">
+            <span class="skill-cat-label">Tools</span>
+            <div class="skill-cat-line"></div>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">Nmap</span>
+            <span class="skill-pill">Burp Suite</span>
+            <span class="skill-pill">Metasploit</span>
+            <span class="skill-pill">Wireshark</span>
+            <span class="skill-pill">Nikto</span>
+            <span class="skill-pill">DNSRecon</span>
+            <span class="skill-pill">Ghidra</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up">
+          <div class="skill-cat-header">
+            <span class="skill-cat-label">Systems</span>
+            <div class="skill-cat-line"></div>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">Linux</span>
+            <span class="skill-pill">Ubuntu</span>
+            <span class="skill-pill">Windows</span>
+            <span class="skill-pill">Mac</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up">
+          <div class="skill-cat-header">
+            <span class="skill-cat-label">Programming</span>
+            <div class="skill-cat-line"></div>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">HTML / CSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: EXPERIENCE ======================== -->
+  <section id="experience" data-section="experience" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// EXPERIENCE">// EXPERIENCE</h2>
+      <div class="timeline">
+
+        <!-- Experience Card 1 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">cyber_police_intern.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Cyber Police Intern</h3>
+              <p class="exp-company">Nagpur Cyber Police</p>
+              <p class="exp-date">Jun 2025 – Jul 2025</p>
+              <ul class="exp-details">
+                <li>Assisted in digital forensics and cybercrime investigations</li>
+                <li>Worked on evidence analysis, data recovery, and incident documentation</li>
+                <li>Gained real-world exposure to law enforcement cyber operations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Card 2 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">hacksecure_intern.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Cybersecurity Intern</h3>
+              <p class="exp-company">HackSecure (Remote)</p>
+              <p class="exp-date">Apr 2025 – May 2025</p>
+              <ul class="exp-details">
+                <li>Performed hands-on offensive security testing and adversarial simulations</li>
+                <li>Worked with real-world attack vectors and vulnerability assessment techniques</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Card 3 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">drone_forensics.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Drone Forensics Intern</h3>
+              <p class="exp-company">Aeroworks Technologies</p>
+              <p class="exp-date">Mar 2025 – Apr 2025</p>
+              <ul class="exp-details">
+                <li>Studied drone hardware architecture and forensic methodologies</li>
+                <li>Assisted in flight data recovery and drone evidence analysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Card 1 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card card-leadership">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">leadership_roles.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Co-Lead</h3>
+              <p class="exp-company">The Hackers Meetup Nagpur</p>
+              <p class="exp-date">Feb 2025 – Present</p>
+              <ul class="exp-details">
+                <li>Organized national-level cybersecurity meetups and technical events</li>
+                <li>Collaborated with professionals, students, and security communities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Card 2 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card card-leadership">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">rotaract_club.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Joint Secretary</h3>
+              <p class="exp-company">Rotaract Club of SVPCET</p>
+              <p class="exp-date">Nov 2025 – Present</p>
+              <ul class="exp-details">
+                <li>Coordinating club activities and community service initiatives</li>
+                <li>Contributing to organizational development and youth engagement programs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Card 3 -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="terminal-card card-leadership">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">phoenix_club.sh</span>
+            </div>
+            <div class="terminal-card-body">
+              <h3 class="exp-role">Associate IT Admin</h3>
+              <p class="exp-company">Phoenix Cybersecurity Club</p>
+              <p class="exp-date">Aug 2024 – Present</p>
+              <ul class="exp-details">
+                <li>Trained 250+ students in ethical hacking, Linux administration, and cybersecurity fundamentals</li>
+                <li>Led workshops, CTFs, and internal security training programs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: PROJECTS ======================== -->
+  <section id="projects" data-section="projects" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// PROJECTS">// PROJECTS</h2>
+      <p class="section-subtitle">Security tools & research builds</p>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-flip-card reveal-up">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon-code">WTA</div>
+              <h3 class="project-name">Web Threat Analyzer</h3>
+              <p class="project-brief">Automated recon &amp; vulnerability scanning pipeline</p>
+              <span class="flip-hint">Hover to flip →</span>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-name">Web Threat Analyzer</h3>
+              <ul class="project-details">
+                <li>Integrates Nmap, Nikto, DNSRecon &amp; TheHarvester in one automated pipeline</li>
+                <li>Custom SQL injection detection &amp; HTTP security header analysis</li>
+                <li>Reduced recon time by ~40–60% vs manual tool-switching</li>
+                <li>Built for CTF, bug bounty &amp; beginner pentesting workflows</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Nmap</span>
+                <span class="tag">Nikto</span>
+                <span class="tag">Kali Linux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-flip-card reveal-up">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon-code">ESP</div>
+              <h3 class="project-name">ESP32 Pentest Device</h3>
+              <p class="project-brief">Pocket-sized hardware offensive security tool</p>
+              <span class="flip-hint">Hover to flip →</span>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-name">ESP32 Pentest Device</h3>
+              <ul class="project-details">
+                <li>Wi-Fi handshake capture, WPS exploitation &amp; rogue AP simulation</li>
+                <li>Evil twin attacks &amp; MITM scenario simulation</li>
+                <li>Bluetooth spoofing for wireless attack research</li>
+                <li>Fully portable — designed for real-world red team &amp; wireless audits</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">ESP32</span>
+                <span class="tag">Embedded C</span>
+                <span class="tag">Wi-Fi</span>
+                <span class="tag">Bluetooth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-flip-card reveal-up">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon-code">KP</div>
+              <h3 class="project-name">KarmaPay</h3>
+              <p class="project-brief">Campus blockchain payment &amp; karma rewards platform</p>
+              <span class="flip-hint">Hover to flip →</span>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-name">KarmaPay</h3>
+              <ul class="project-details">
+                <li>Real SHM transactions on Shardeum Unstablenet with MetaMask integration</li>
+                <li>Gamified karma rewards — tiered bonuses, leaderboard &amp; campus perks</li>
+                <li>NFT-based event ticketing with QR verification &amp; anti-fraud protection</li>
+                <li>PWA — offline-capable, cross-platform, no app store required</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Blockchain</span>
+                <span class="tag">Solidity</span>
+                <span class="tag">PWA</span>
+                <span class="tag">MetaMask</span>
+              </div>
+              <a href="https://github.com/Anshulvairagade-exe/KarmaPay" target="_blank" rel="noopener noreferrer" class="project-github-link">View on GitHub &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-flip-card reveal-up">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon-code">APK</div>
+              <h3 class="project-name">APK Malware Analysis Tool</h3>
+              <p class="project-brief">Automated reverse engineering for law enforcement</p>
+              <span class="flip-hint">Hover to flip →</span>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-name">APK Malware Analysis Tool</h3>
+              <ul class="project-details">
+                <li>Automated pipeline: APK → Apktool decompile → code analysis → AI report</li>
+                <li>Gemini API for intelligent malware behavior summarization</li>
+                <li>Standardized forensic reports for cyber police investigators</li>
+                <li>Significantly reduced manual analysis time for cybercrime triage</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Apktool</span>
+                <span class="tag">Gemini API</span>
+                <span class="tag">Forensics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-flip-card reveal-up">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon-code">CTF</div>
+              <h3 class="project-name">CTFd Multi-Server Platform</h3>
+              <p class="project-brief">Scalable 8-server competition infrastructure</p>
+              <span class="flip-hint">Hover to flip →</span>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-name">CTFd Multi-Server Platform</h3>
+              <ul class="project-details">
+                <li>8-server architecture with isolated Docker containers per challenge category</li>
+                <li>VPN-based secure access control for all participants</li>
+                <li>Real-time scoreboard + live traffic monitoring throughout event</li>
+                <li>Zero major downtime during live competition — stable under load</li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">AWS</span>
+                <span class="tag">CTFd</span>
+                <span class="tag">VPN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- ======================== SECTION: CTF ACHIEVEMENTS ======================== -->
+  <section id="ctf" data-section="ctf" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// CTF ACHIEVEMENTS">// CTF ACHIEVEMENTS</h2>
+      <p class="section-subtitle">Capture The Flag competition track record</p>
+      <div class="ctf-leaderboard">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th class="col-rank">Rank</th>
+              <th class="col-event">Event</th>
+              <th class="col-venue">Venue / Scope</th>
+              <th class="col-year">Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank-gold reveal-up">
+              <td class="rank"><span class="rank-badge rank-1">1st</span></td>
+              <td class="event">International Cyber Summit CTF</td>
+              <td class="venue">ICYS 2025</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-gold reveal-up">
+              <td class="rank"><span class="rank-badge rank-1">1st</span></td>
+              <td class="event">HackFusion CTF</td>
+              <td class="venue">GHRCEM Nagpur</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-gold reveal-up">
+              <td class="rank"><span class="rank-badge rank-1">1st</span></td>
+              <td class="event">YCCE TechFest CTF</td>
+              <td class="venue">YCCE Nagpur</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-silver reveal-up">
+              <td class="rank"><span class="rank-badge rank-2">2nd</span></td>
+              <td class="event">HICAThon 1.0 (National Level)</td>
+              <td class="venue">Symbiosis Pune</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-silver reveal-up">
+              <td class="rank"><span class="rank-badge rank-2">2nd</span></td>
+              <td class="event">Smart India Hackathon (SIH)</td>
+              <td class="venue">Internal Round</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-bronze reveal-up">
+              <td class="rank"><span class="rank-badge rank-3">3rd</span></td>
+              <td class="event">PayFi Mini Hackathon</td>
+              <td class="venue">SPARKS 2025</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-elite reveal-up">
+              <td class="rank"><span class="rank-badge rank-elite">#48</span></td>
+              <td class="event">DEFCON CTF India</td>
+              <td class="venue">National</td>
+              <td class="year">2025</td>
+            </tr>
+            <tr class="rank-qual reveal-up">
+              <td class="rank"><span class="rank-badge rank-qual">Qualified</span></td>
+              <td class="event">Meshmerize Zonals</td>
+              <td class="venue">IIT Bombay</td>
+              <td class="year">2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: CERTIFICATIONS ======================== -->
+  <section id="certifications" data-section="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// CERTIFICATIONS">// CERTIFICATIONS</h2>
+      <div class="certs-scroll-container">
+        <div class="certs-scroll-track">
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="Google Cybersecurity Certificate"></div>
+            <h3 class="cert-name">Google Cybersecurity Certificate</h3>
+            <p class="cert-issuer">Coursera</p>
+          </div>
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="CNSP Certificate"></div>
+            <h3 class="cert-name">Certified Network Security Practitioner (CNSP)</h3>
+            <p class="cert-issuer">The SecOps Group</p>
+          </div>
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="Cryptography Certificate"></div>
+            <h3 class="cert-name">Cryptography &amp; Network Security</h3>
+            <p class="cert-issuer">NPTEL</p>
+          </div>
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="CRTOM Certificate"></div>
+            <h3 class="cert-name">Certified Red Team Operations Management (CRTOM)</h3>
+            <p class="cert-issuer">Red Team Leaders</p>
+          </div>
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="CRPO Certificate"></div>
+            <h3 class="cert-name">Certified Ransomware Protection Officer (CRPO)</h3>
+            <p class="cert-issuer">ICTTF</p>
+          </div>
+
+          <div class="cert-card reveal-up">
+            <div class="cert-badge"><img src="images/cert-badge.png" alt="Privacy Certificate"></div>
+            <h3 class="cert-name">Privacy &amp; Security in Online Social Media</h3>
+            <p class="cert-issuer">NPTEL</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECTION: CAREER GALLERY ======================== -->
+  <section id="gallery" data-section="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// CAREER GALLERY">// CAREER GALLERY</h2>
+      <p class="section-subtitle">Snapshots from hackathons, conferences, workshops & beyond</p>
+
+      <!-- Category Filter Buttons -->
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">
+          <span class="filter-icon"></span> All
+        </button>
+        <button class="filter-btn" data-filter="speaking">
+          <span class="filter-icon"></span> Speaking
+        </button>
+        <button class="filter-btn" data-filter="awards">
+          <span class="filter-icon"></span> Awards
+        </button>
+        <button class="filter-btn" data-filter="conference">
+          <span class="filter-icon"></span> Conferences
+        </button>
+        <button class="filter-btn" data-filter="team">
+          <span class="filter-icon"></span> Team
+        </button>
+        <button class="filter-btn" data-filter="professional">
+          <span class="filter-icon"></span> Professional
+        </button>
+      </div>
+
+      <!-- Masonry Gallery Grid -->
+      <div class="gallery-masonry" id="gallery-grid">
+
+        <div class="gallery-item tall" data-category="speaking" data-caption="Speaking at ICYS 2025 — International Cyber Youth Summit">
+          <img src="images/photo-7.jpeg" alt="Anshul speaking at ICYS 2025 podium" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">ICYS 2025</span>
+            <p class="gallery-caption">Keynote at International Cyber Youth Summit</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="awards" data-caption="2nd Prize — Smart India Hackathon Internal, St. Vincent Pallotti College">
+          <img src="images/photo-8.jpeg" alt="Anshul with SIH award trophy" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">SIH 2025</span>
+            <p class="gallery-caption">2nd Prize — Smart India Hackathon</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" data-caption="Teaching ethical hacking to 250+ students at college workshops">
+          <img src="images/photo-3.jpeg" alt="Anshul teaching ethical hacking in classroom" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Workshop</span>
+            <p class="gallery-caption">Ethical Hacking Workshop — 250+ Trained</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item wide" data-category="team" data-caption="Phoenix Cybersecurity Club — College team in formal attire">
+          <img src="images/photo-2.jpeg" alt="Phoenix Cybersecurity Club team photo" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Phoenix Club</span>
+            <p class="gallery-caption">Phoenix Cybersecurity Club — Team Photo</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item tall" data-category="speaking" data-caption="Addressing students at seminar hall — Phoenix Cyber Security">
+          <img src="images/photo-16.jpeg" alt="Anshul presenting to audience in auditorium" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Seminar</span>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="conference" data-caption="Seasides International Information Security Conference, Goa">
+          <img src="images/photo-15.jpeg" alt="Team at Seasides security conference" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Seasides</span>
+            <p class="gallery-caption">Seasides InfoSec Conference — Goa</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="professional" data-caption="Meeting with Cyber Police officers during forensics internship">
+          <img src="images/photo-6.jpeg" alt="Meeting with cyber police officers" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Cyber Police</span>
+            <p class="gallery-caption">Nagpur Cyber Police — Forensics Internship</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="awards" data-caption="Team receiving award from college director — St. Vincent Pallotti">
+          <img src="images/photo-9.jpeg" alt="Team receiving award from college director" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Recognition</span>
+            <p class="gallery-caption">Award from College Director</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" data-caption="Hands-on ethical hacking class — Teaching network security">
+          <img src="images/photo-4.jpeg" alt="Anshul teaching ethical hacking in lab" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Training</span>
+            <p class="gallery-caption">Hands-on Ethical Hacking Lab Session</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item wide" data-category="conference" data-caption="Selfie with team at Seasides/HACKER conference, Goa">
+          <img src="images/photo-25.jpeg" alt="Team selfie at HACKER conference Goa" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">HACKER Con</span>
+            <p class="gallery-caption">Team at Seasides HACKER Conference</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="professional" data-caption="Professional meetup with industry cybersecurity experts">
+          <img src="images/photo-28.jpeg" alt="Meeting with cybersecurity industry experts" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Industry</span>
+            <p class="gallery-caption">Meeting with Cybersecurity Experts</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item tall" data-category="awards" data-caption="At hackathon venue — St. Vincent Pallotti National Hackathon">
+          <img src="images/photo-27.jpeg" alt="Anshul at Pallotti National Hackathon" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Hackathon</span>
+            <p class="gallery-caption">Pallotti National Hackathon Venue</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="conference" data-caption="Expert Session & Panel Discussion — School of CSIT event">
+          <img src="images/photo-17.jpeg" alt="Expert session at CSIT event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Panel</span>
+            <p class="gallery-caption">Expert Panel Discussion — CSIT</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="awards" data-caption="HackFusion 3.0 — Receiving certificate from organizers at GHRCE">
+          <img src="images/photo-22.jpeg" alt="HackFusion 3.0 certificate ceremony" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">HackFusion</span>
+            <p class="gallery-caption">HackFusion 3.0 — Certificate Ceremony</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" data-caption="Attending seminar session — seated in auditorium with faculty">
+          <img src="images/photo-31.jpeg" alt="Attending seminar in auditorium" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Seminar</span>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item tall" data-category="professional" data-caption="Reading and upskilling — Continuous self-improvement">
+          <img src="images/photo-29.jpeg" alt="Anshul reading a book" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Upskill</span>
+            <p class="gallery-caption">Continuous Learning & Growth</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="team" data-caption="Team photo at cybersecurity event — Standing with peers">
+          <img src="images/photo-5.jpeg" alt="Team at cybersecurity event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Team</span>
+            <p class="gallery-caption">Team at Cybersecurity Event</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="conference" data-caption="At security conference with conference ID badge">
+          <img src="images/photo-10.jpeg" alt="At security conference" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Conference</span>
+            <p class="gallery-caption">Security Conference Attendance</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item wide" data-category="team" data-caption="Group photo at outdoor event with fellow cybersecurity enthusiasts">
+          <img src="images/photo-11.jpeg" alt="Group photo at outdoor event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Meetup</span>
+            <p class="gallery-caption">Cybersecurity Meetup — Group Photo</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="awards" data-caption="Achievement milestone — Event recognition and awards">
+          <img src="images/photo-12.jpeg" alt="Achievement and awards" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Achievement</span>
+            <p class="gallery-caption">Event Recognition & Award</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" data-caption="Workshop session — Teaching students cybersecurity fundamentals">
+          <img src="images/photo-13.jpeg" alt="Workshop teaching session" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Workshop</span>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="team" data-caption="Candid team moment — Behind the scenes at events">
+          <img src="images/photo-14.jpeg" alt="Team candid at event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Behind Scenes</span>
+            <p class="gallery-caption">Behind the Scenes — Event Team</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="conference" data-caption="At tech conference — Networking and knowledge sharing">
+          <img src="images/photo-18.jpeg" alt="Tech conference networking" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Tech Conf</span>
+            <p class="gallery-caption">Tech Conference — Networking</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="professional" data-caption="Professional development — Industry interaction and mentoring">
+          <img src="images/photo-19.jpeg" alt="Professional mentoring session" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Mentoring</span>
+            <p class="gallery-caption">Industry Mentoring Session</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="team" data-caption="Team building — Growing together as cybersecurity professionals">
+          <img src="images/photo-20.jpeg" alt="Team building event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Bonding</span>
+            <p class="gallery-caption">Team Building Moments</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="awards" data-caption="Recognition ceremony — Celebrating cybersecurity achievements">
+          <img src="images/photo-21.jpeg" alt="Awards and recognition" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Ceremony</span>
+            <p class="gallery-caption">Awards Ceremony — Celebrating Wins</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="team" data-caption="Collaborative event — Hackers Meetup Nagpur community">
+          <img src="images/photo-23.jpeg" alt="Hackers Meetup community" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Community</span>
+            <p class="gallery-caption">The Hackers Meetup — Nagpur</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="conference" data-caption="Conference session — Attending expert talks on InfoSec">
+          <img src="images/photo-24.jpeg" alt="InfoSec expert talk session" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">InfoSec</span>
+            <p class="gallery-caption">InfoSec Expert Talk — Conference</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="professional" data-caption="Professional networking — Building industry connections">
+          <img src="images/photo-26.jpeg" alt="Professional networking" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Network</span>
+            <p class="gallery-caption">Building Industry Connections</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" data-caption="Public speaking moment — Delivering technical talks">
+          <img src="images/photo-30.jpeg" alt="Public speaking at tech event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Talk</span>
+            <p class="gallery-caption">Delivering Technical Talk</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="team" data-caption="Celebrating together — Team victory moments">
+          <img src="images/photo-32.jpeg" alt="Team celebration" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Victory</span>
+            <p class="gallery-caption">Team Victory Celebration</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+        <div class="gallery-item" data-category="professional" data-caption="Event coordination — Managing cybersecurity events on campus">
+          <img src="images/photo-1.jpeg" alt="Event coordination" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Organizer</span>
+            <p class="gallery-caption">Campus Cybersecurity Event</p>
+          </div>
+          <div class="gallery-scanline"></div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Hint -->
+      <div class="gallery-scroll-hint" id="gallery-scroll-hint">
+        <span class="counter-prompt">&gt;</span> Showing <span id="visible-count">32</span> of 32 memories &nbsp;·&nbsp; <span class="scroll-hint-text">← scroll to explore →</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== LIGHTBOX OVERLAY ======================== -->
+  <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" class="lightbox-image">
+      <div class="lightbox-info">
+        <p id="lightbox-caption" class="lightbox-caption-text"></p>
+        <span id="lightbox-index" class="lightbox-index"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SECTION: CONTACT ======================== -->
+  <section id="contact" data-section="contact" class="section">
+    <div class="container">
+      <h2 class="section-title glitch-target" data-text="// CONTACT">// CONTACT</h2>
+      <div class="contact-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">contact_anshul.sh</span>
+        </div>
+        <div class="terminal-card-body contact-body">
+          <div class="contact-grid">
+            <a href="mailto:anshulvairagade13@gmail.com" class="contact-item" id="contact-email">
+              <span class="contact-icon">✉️</span>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">anshulvairagade13@gmail.com</span>
+            </a>
+            <a href="tel:+919022425319" class="contact-item" id="contact-phone">
+              <span class="contact-icon">☎️</span>
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+91 9022425319</span>
+            </a>
+            <a href="https://www.linkedin.com/in/anshul-vairagade-15582b201/" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-linkedin">
+              <span class="contact-icon">💼</span>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">anshul-vairagade</span>
+            </a>
+            <a href="https://github.com/Anshulvairagade-exe" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-github">
+              <span class="contact-icon">💻</span>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">Anshulvairagade-exe</span>
+            </a>
+            <a href="https://medium.com/@anshulvairagade13" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-medium">
+              <span class="contact-icon">✏️</span>
+              <span class="contact-label">Medium</span>
+              <span class="contact-value">@anshulvairagade13</span>
+            </a>
+            <div class="contact-item" id="contact-location">
+              <span class="contact-icon">📍</span>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Nagpur, Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer id="footer">
+    <div class="container">
+      <p class="footer-text">
+        <span class="footer-prompt">&gt;</span> Designed & built by <span class="highlight">Anshul Vairagade</span> · &copy; 2025
+      </p>
+      <p class="footer-sub">root@anshul:~$ echo "Thanks for visiting" <span class="terminal-cursor-small">▮</span></p>
+    </div>
+  </footer>
+
+  <!-- ======================== EASTER EGG: ACCESS GRANTED OVERLAY ======================== -->
+  <div id="hackme-overlay" class="hackme-overlay" aria-hidden="true">
+    <div class="hackme-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">system_breach.sh</span>
+      </div>
+      <div class="hackme-body">
+        <pre id="hackme-text"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
