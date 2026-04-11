@@ -879,7 +879,7 @@ ul, ol {
 
 .project-flip-card {
   perspective: 1000px;
-  height: 340px;
+  height: 450px;
 }
 .flip-card-inner {
   position: relative;
@@ -900,7 +900,8 @@ ul, ol {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 16px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Glassmorphism front */
