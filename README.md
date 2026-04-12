@@ -3,38 +3,18 @@
 A modern, interactive cybersecurity portfolio with Matrix-themed design and real-time animations.
 
 ## Features
-- 🎨 Matrix Green + Cyber Blue theme
-- 📱 Fully responsive design
-- ✨ Smooth animations and transitions
-- 🖼️ Interactive gallery with filtering
-- 📊 CTF achievements leaderboard
-- 🎓 Certifications section with image badges
-- �� Professional contact section
+- Matrix Green + Cyber Blue theme
+- Fully responsive design
+- Smooth animations and transitions
+- Interactive gallery with filtering
+- CTF achievements leaderboard
+- Certifications section with image badges
+- Professional contact section
 
 ## Prerequisites
 - Python 3.x (for local development)
 - Modern web browser
 
-## How to Run Locally
-
-### Option 1: Python HTTP Server (Recommended)
-```bash
-cd /Users/anshul/Documents/portfolio
-python3 -m http.server 8000
-```
-Then open: **http://localhost:8000**
-
-### Option 2: Using any other local server
-```bash
-# Using Node.js http-server
-npx http-server
-
-# Using Ruby
-ruby -run -ehttpd . -p8000
-
-# Using PHP
-php -S localhost:8000
-```
 
 ## Project Structure
 ```
